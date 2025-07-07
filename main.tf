@@ -1,7 +1,7 @@
 resource "proxmox_vm_qemu" "ubuntu_server" {
   name        = "ubuntu-server"
-  target_node = "proxmox-node-name"  # Your Proxmox node name
-  clone       = "ubuntu-cloudinit-template"  # The name of your cloud-init template
+  target_node = "host"  # Your Proxmox node name
+  clone       = "UbuntuServerTemplate"  # The name of your cloud-init template
 
   os_type = "cloud-init"
 
@@ -24,5 +24,3 @@ resource "proxmox_vm_qemu" "ubuntu_server" {
 
   sshkeys = file("~/.ssh/id_rsa.pub")
 }
-
-#test
